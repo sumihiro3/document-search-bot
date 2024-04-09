@@ -16,15 +16,13 @@ datasource db {
 }
 
 model Memo {
-  id         Int             @id @default(autoincrement())
-  content    String
-  embeddings MemoEmbedding[]
-}
-
-model MemoEmbedding {
-  id      Int                   @id @default(autoincrement())
-  memoId  Int
-  memo    Memo                  @relation(fields: [memoId], references: [id], onDelete: Cascade)
-  content String
-  vector  Unsupported("vector") // pgvectorで定義されるvector typeのデータ
+  id        Int                    @id @default(autoincrement())
+  // メモの内容
+  content   String
+  // pgvectorで定義されるvector typeのデータ
+  vector    Unsupported("vector")?
+  // 作成日時
+  createdAt DateTime               @default(now()) @map("created_at")
+  // 更新日時
+  updatedAt DateTime               @updatedAt @map("updated_at")
 }

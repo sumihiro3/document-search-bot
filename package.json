@@ -18,15 +18,18 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "memo:insert": "ts-node ./src/tools/insertMemoContents.ts",
-    "memo:vectorize": "ts-node ./src/tools/vectorizeMemoContents.ts"
+    "memo:insert": "ts-node ./src/tools/insertMemoContents.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.3.1",
+    "@langchain/community": "^0.0.43",
     "@langchain/google-genai": "^0.0.10",
+    "@langchain/openai": "^0.0.25",
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^3.2.1",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/swagger": "^7.3.1",
     "@prisma/client": "5.11.0",
     "langchain": "^0.1.30",
     "reflect-metadata": "^0.1.13",
