@@ -396,16 +396,6 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
-"@google/generative-ai@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@google/generative-ai/-/generative-ai-0.1.3.tgz#8e529d4d86c85b64d297b4abf1a653d613a09a9f"
-  integrity sha512-Cm4uJX1sKarpm1mje/MiOIinM7zdUUrQp/5/qGPAgznbdd/B9zup5ehT6c1qGqycFcSopTA1J1HpqHS5kJR8hQ==
-
-"@google/generative-ai@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@google/generative-ai/-/generative-ai-0.3.1.tgz#327b7f6df0d456205d44ad4237d7278e673984d5"
-  integrity sha512-Zh1EK5nCWqIhxPm3K1KOM2mOwwgBvp6lkze74yTj6+Zqibtf55Db1q87cbbzWZeET3ZbNgHMYjVf2JyMM6pI7A==
-
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.14.tgz#d78e481a039f7566ecc9660b4ea7fe6b1fec442b"
@@ -694,7 +684,7 @@
     uuid "^9.0.0"
     zod "^3.22.3"
 
-"@langchain/core@~0.1.44", "@langchain/core@~0.1.45", "@langchain/core@~0.1.5":
+"@langchain/core@~0.1.44", "@langchain/core@~0.1.45":
   version "0.1.52"
   resolved "https://registry.yarnpkg.com/@langchain/core/-/core-0.1.52.tgz#7619310b83ffa841628efe2e1eda873ca714d068"
   integrity sha512-AEyP99r7jijF33pyzaWtqCkiO9crotgethqq7jznAGlIojMCL9BT/id2DjVyN32SGFTpet273kkjsmEdFSHqpA==
@@ -710,14 +700,6 @@
     uuid "^9.0.0"
     zod "^3.22.4"
     zod-to-json-schema "^3.22.3"
-
-"@langchain/google-genai@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@langchain/google-genai/-/google-genai-0.0.10.tgz#05459e668cd018f2e4b0fb639083014151b0ef08"
-  integrity sha512-neFuCoMew9t8IYM5srh6RVUFQsZxqPtAFVJ0mWtZqHXtb627MECs5FYr+xw1ptPKSbhIAN5H8sgdObqes4bN3A==
-  dependencies:
-    "@google/generative-ai" "^0.1.3"
-    "@langchain/core" "~0.1.5"
 
 "@langchain/openai@^0.0.25", "@langchain/openai@~0.0.19":
   version "0.0.25"
