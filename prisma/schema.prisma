@@ -26,3 +26,24 @@ model Memo {
   // 更新日時
   updatedAt DateTime               @updatedAt @map("updated_at")
 }
+
+model Movie {
+  id               String                 @id @default(cuid())
+  title            String
+  overview         String
+  releaseDate      DateTime               @map("release_date")
+  genres           String[]
+  posterPath       String?                @map("poster_path")
+  backdropPath     String?                @map("backdrop_path")
+  popularity       Float?
+  voteAverage      Float?                 @map("vote_average")
+  voteCount        Int?                   @map("vote_count")
+  originalLanguage String?                @map("original_language")
+  originalTitle    String?                @map("original_title")
+  // pgvectorで定義されるvector typeのデータ
+  vector           Unsupported("vector")?
+  // 作成日時
+  createdAt        DateTime               @default(now()) @map("created_at")
+  // 更新日時
+  updatedAt        DateTime               @updatedAt @map("updated_at")
+}
