@@ -148,7 +148,7 @@ yarn run start:prod
 ### Movie の検索
 
 ブラウザーで実行
-`http://localhost:3000/movies?q=ドキドキのサスペンス映画`
+`http://localhost:3000/movies?q=迫力満点の戦争映画`
 
 ```json
 [
@@ -192,22 +192,24 @@ yarn run start:prod
     "updatedAt": "2024-04-10T14:18:18.932Z"
   },
   {
-    "id": "818502",
-    "title": "ネイバー大戦争 ～隣の芝はサンバの香り～",
+    "id": "957992",
+    "title": "军火大劫案",
     "overview": "",
-    "releaseDate": "2022-08-31T15:00:00.000Z",
+    "releaseDate": "2022-04-08T15:00:00.000Z",
     "genres": [
-      "コメディ"
+      "犯罪",
+      "ドラマ",
+      "アクション"
     ],
-    "posterPath": "/oT7388wlquvpGN3LPxVeD849QAI.jpg",
-    "backdropPath": "/iDzduWwkTICb1lAQoLMWLrySUNs.jpg",
-    "popularity": 8.241,
-    "voteAverage": 5.7,
-    "voteCount": 57,
-    "originalLanguage": "pt",
-    "originalTitle": "Vizinhos",
-    "createdAt": "2024-04-10T14:18:18.942Z",
-    "updatedAt": "2024-04-10T14:18:18.942Z"
+    "posterPath": "/ronrzgFs2FOk0R4BAZgyLaYdhua.jpg",
+    "backdropPath": "/gOkK6Y1QazWgA9Pf9ZiT3QLxRBZ.jpg",
+    "popularity": 32.262,
+    "voteAverage": 6.569,
+    "voteCount": 51,
+    "originalLanguage": "zh",
+    "originalTitle": "军火大劫案",
+    "createdAt": "2024-04-10T14:18:18.938Z",
+    "updatedAt": "2024-04-10T14:18:18.938Z"
   },
   {
     "id": "732459",
@@ -228,24 +230,25 @@ yarn run start:prod
     "updatedAt": "2024-04-10T14:18:18.938Z"
   },
   {
-    "id": "957992",
-    "title": "军火大劫案",
+    "id": "543504",
+    "title": "神探大戦",
     "overview": "",
-    "releaseDate": "2022-04-08T15:00:00.000Z",
+    "releaseDate": "2022-10-23T15:00:00.000Z",
     "genres": [
+      "アクション",
       "犯罪",
-      "ドラマ",
-      "アクション"
+      "謎",
+      "スリラー"
     ],
-    "posterPath": "/ronrzgFs2FOk0R4BAZgyLaYdhua.jpg",
-    "backdropPath": "/gOkK6Y1QazWgA9Pf9ZiT3QLxRBZ.jpg",
-    "popularity": 32.262,
-    "voteAverage": 6.569,
-    "voteCount": 51,
-    "originalLanguage": "zh",
-    "originalTitle": "军火大劫案",
-    "createdAt": "2024-04-10T14:18:18.938Z",
-    "updatedAt": "2024-04-10T14:18:18.938Z"
+    "posterPath": "/vkrReqcJHVr0yNF2hOnPqPRcRP4.jpg",
+    "backdropPath": "/70DKGgzTwyC7fr3FGM6JSHGqmPm.jpg",
+    "popularity": 16.674,
+    "voteAverage": 6.804,
+    "voteCount": 74,
+    "originalLanguage": "cn",
+    "originalTitle": "神探大战",
+    "createdAt": "2024-04-10T14:18:18.935Z",
+    "updatedAt": "2024-04-10T14:18:18.935Z"
   }
 ]
 ```
