@@ -1,38 +1,27 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { Memo, Prisma } from '@prisma/client';
+import { Memo } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
-import { PrismaVectorStore } from '@langchain/community/vectorstores/prisma';
-import { OpenAIEmbeddings } from '@langchain/openai';
+import { LlmService } from '../llm/llm.service';
+
+const MAX_MEMO_RETRIEVAL_COUNT = 5;
 
 @Injectable()
 export class MemoService {
   private readonly logger = new Logger(MemoService.name);
 
-  private readonly maxSearchResults = 5;
-
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly llmService: LlmService,
+  ) {}
 
   async search(query: string): Promise<Memo[]> {
     this.logger.log(`search`, { query });
     // vector store
-    const vectorStore = PrismaVectorStore.withModel<Memo>(this.prisma).create(
-      new OpenAIEmbeddings({
-        modelName: 'text-embedding-3-small',
-      }),
-      {
-        prisma: Prisma,
-        tableName: 'Memo',
-        vectorColumnName: 'vector',
-        columns: {
-          id: PrismaVectorStore.IdColumn,
-          content: PrismaVectorStore.ContentColumn,
-        },
-      },
-    );
+    const vectorStore = this.llmService.getMemoVectorStore();
     // ベクトルデータから類似度が高い順に検索
     const result = await vectorStore.similaritySearch(
       query,
-      this.maxSearchResults,
+      MAX_MEMO_RETRIEVAL_COUNT,
     );
     console.log(JSON.stringify(result, null, 2));
     const memoIds: number[] = result.map((result) => result.metadata.id);
@@ -46,6 +35,10 @@ export class MemoService {
       });
       memoList.push(memo);
     }
+    this.logger.log(`ユーザーからの質問に応じたメモを取得しました`, {
+      query,
+      memoList,
+    });
     return memoList;
   }
 }

@@ -54,8 +54,4 @@ export class MovieResult {
       updatedAt: new Date(),
     };
   }
-
-  static toTitle(movie: MovieResult): string {
-    return `${movie.title} (${movie.release_date})`;
-  }
 }

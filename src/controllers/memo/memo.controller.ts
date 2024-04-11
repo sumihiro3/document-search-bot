@@ -12,9 +12,9 @@ export class MemoController {
 
   @Get()
   async search(@Query('q') query?: string): Promise<Memo[]> {
-    this.logger.log('search', { query });
+    this.logger.debug('search', { query });
     const result = await this.memoService.search(query);
-    this.logger.log('search result', { result });
+    this.logger.debug('search result', { result });
     return result;
   }
 }
