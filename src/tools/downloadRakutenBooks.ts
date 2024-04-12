@@ -24,6 +24,7 @@ const TARGET_GENRES = [
 
 /**
  * API クエリパラメータ
+ * @see https://webservice.rakuten.co.jp/documentation/books-book-search
  */
 const API_PARAMS = {
   applicationId: process.env.RAKUTEN_APPLICATION_ID,
