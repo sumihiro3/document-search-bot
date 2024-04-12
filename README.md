@@ -7,22 +7,24 @@
 
 ## 環境構成
 
+- LLM
+    - ChatGPT
+- LLM Framework
+    - LangChain
 - ベクター化
     - OpenAI API
         - text-embedding-3-small
 - ベクターデータストア
-    - PostgreSQL + pg_vector + Prisma
+    - PostgreSQL + pg_vector
         - ローカル
             - Docker
         - ローンチ先候補
             - Neon
             - Supabase
-- LLM
-    - ChatGPT
-- LLM Framework
-    - LangChain
 - Web application Framework
     - NestJS
+- ORM
+    - Prisma
 - 開発言語
     - TypeScript
 
@@ -49,12 +51,24 @@ yarn install
 
 ### データベースの設定
 
+#### データ格納用ディレクトリの作成
+
+Docker compose で起動する DB のデータを格納するディレクトリを作っておく。
+
+```sh
+mkdir db-data
+```
+
+#### DB 起動
+
 Docker compose で PostgreSQL を起動する。
 ベクトルデータに対応した EXtension `pg_vector` を利用する。
 
 ```sh
 docker compose up -d
 ```
+
+## ベクター化するデータのダウンロードとベクター化
 
 ### Prisma でテーブルを作成する
 
@@ -66,17 +80,18 @@ yarn prisma:generate
 npx prisma migrate dev
 ```
 
-## ベクター化するデータのダウンロードとベクター化
-
 ### Memo データ
 
-下記コマンドでベクター化する
+まずは [日本語文章](data/JapaneseNLP.csv) を Memo テーブルに登録する。
+下記コマンドでベクター化しながら、Memo テーブルへ登録する。
 
 ```sh
 yarn memo:insert
 ```
 
 ### Movie データ
+
+[TMDB](https://www.themoviedb.org/about?language=ja-JP)（コミュニティが主体となって構築した映画やTV番組のデータベース）から映画のあらすじやジャンルのデータを取得してベクター化する。
 
 #### ダウンロード
 
@@ -155,7 +170,7 @@ yarn run start:prod
   {
     "id": "782054",
     "title": "映画ドラえもん のび太の宇宙小戦争 2021",
-    "overview": "夏休みのある日。のび太が拾った小さなロケットの中から、手のひらサイズの宇宙人・パピがあらわれる！彼は、宇宙のかなたにある小さな星・ピリカ星の大統領で、反乱軍から逃れるために地球にやってきたという。最初はパピのあまりの小ささに戸惑うドラえもんたちだったが、ひみつ道具“スモールライト”で自分たちも小さくなって一緒に遊ぶうち、次第に仲良なっていく。ところが、パピを追って地球にやってきたクジラ型の宇宙戦艦が、パピをとらえるためにドラえもんやのび太たちを攻撃。みんなを巻き込んでしまったことに責任を感じたパピは、ひとり反乱軍に立ち向かおうとするが･･････。  大切な友だちと、その故郷を守るため、ドラえもんたちはピリカ星へと出発する！！",
+    "overview": "夏休みのある日。......................",
     "releaseDate": "2022-03-03T15:00:00.000Z",
     "genres": [
       "アニメーション",
@@ -176,7 +191,7 @@ yarn run start:prod
   {
     "id": "1004663",
     "title": "美と殺戮のすべて",
-    "overview": "ヴェネツィア国際映画祭金獅子賞を皮切りに世界各国の映画賞を席巻！\r 写真家ナン・ゴールディンの光と影に肉薄するドキュメンタリー",
+    "overview": "ヴェネツィア国際映画祭金獅子賞を皮切りに世界各国の映画賞を席巻！......................",
     "releaseDate": "2022-11-22T15:00:00.000Z",
     "genres": [
       "ドキュメンタリー"
@@ -214,7 +229,7 @@ yarn run start:prod
   {
     "id": "732459",
     "title": "47RONIN -ザ・ブレイド-",
-    "overview": "『47RONIN』時代から300年後の世界が舞台。2つ合わせると強大な力となる秘剣を手に入れようとする呪術師に次々とサムライが殺されるなか、剣の在りかのカギを握るルナは、理由も分からず忍者たちに襲われて……。アンナ・アカナ主演のアクション。",
+    "overview": "『47RONIN』時代から300年後の世界が舞台。......................",
     "releaseDate": "2022-10-24T15:00:00.000Z",
     "genres": [
       "ファンタジー"
