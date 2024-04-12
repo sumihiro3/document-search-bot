@@ -10,6 +10,8 @@ import { MoviesModule } from './services/movies/movies.module';
 import { LlmModule } from './services/llm/llm.module';
 import { BooksModule } from './services/books/books.module';
 import { BooksController } from './controllers/books/books.controller';
+import { LineBotWebhookController } from './controllers/line-bot-webhook/line-bot-webhook.controller';
+import { LineBotModule } from './services/line-bot/line-bot.module';
 
 @Module({
   imports: [
@@ -22,12 +24,14 @@ import { BooksController } from './controllers/books/books.controller';
     MoviesModule,
     LlmModule,
     BooksModule,
+    LineBotModule,
   ],
   controllers: [
     AppController,
     MemoController,
     MoviesController,
     BooksController,
+    LineBotWebhookController,
   ],
   providers: [AppService],
 })
