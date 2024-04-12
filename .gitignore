@@ -36,6 +36,7 @@ lerna-debug.log*
 
 tmp/
 data/movies/movies_*.json
+data/books/*books*.json
 
 # PostgreSQL data
 db-data/

@@ -8,6 +8,7 @@ import { ConfigModule } from '@nestjs/config';
 import { MoviesController } from './controllers/movies/movies.controller';
 import { MoviesModule } from './services/movies/movies.module';
 import { LlmModule } from './services/llm/llm.module';
+import { BooksModule } from './services/books/books.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { LlmModule } from './services/llm/llm.module';
     MemoModule,
     MoviesModule,
     LlmModule,
+    BooksModule,
   ],
   controllers: [AppController, MemoController, MoviesController],
   providers: [AppService],

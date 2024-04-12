@@ -47,3 +47,27 @@ model Movie {
   // 更新日時
   updatedAt        DateTime               @updatedAt @map("updated_at")
 }
+
+model Book {
+  id            String                 @id @default(cuid())
+  title         String
+  subtitle      String?
+  description   String
+  authors       String[]
+  publisher     String
+  publishedDate DateTime               @map("published_date")
+  isbn          String
+  itemUrl       String                 @map("item_url")
+  pageCount     Int                    @map("page_count")
+  categories    String[]
+  thumbnail     String?
+  language      String
+  price         Float?
+  currency      String?
+  // pgvectorで定義されるvector typeのデータ
+  vector        Unsupported("vector")?
+  // 作成日時
+  createdAt     DateTime               @default(now()) @map("created_at")
+  // 更新日時
+  updatedAt     DateTime               @updatedAt @map("updated_at")
+}

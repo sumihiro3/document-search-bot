@@ -22,7 +22,9 @@
     "prisma:generate": "npx prisma generate",
     "memo:insert": "ts-node ./src/tools/insertMemoContents.ts",
     "movie:download": "ts-node ./src/tools/downloadTmdbMovies.ts",
-    "movie:insert": "ts-node ./src/tools/insertMovieContents.ts"
+    "movie:insert": "ts-node ./src/tools/insertMovieContents.ts",
+    "book:download": "ts-node ./src/tools/downloadRakutenBooks.ts",
+    "book:insert": "ts-node ./src/tools/insertRakutenBooks.ts"
   },
   "dependencies": {
     "@langchain/community": "^0.0.43",
