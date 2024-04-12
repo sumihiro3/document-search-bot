@@ -9,7 +9,7 @@ export class MoviesController {
 
   @Get()
   async search(@Query('q') query?: string) {
-    this.logger.debug('MoviesController.service', { query });
+    this.logger.debug('MoviesController.search', { query });
     const result = this.moviesService.search(query);
     this.logger.debug('search result', { result });
     return result;

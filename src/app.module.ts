@@ -9,6 +9,7 @@ import { MoviesController } from './controllers/movies/movies.controller';
 import { MoviesModule } from './services/movies/movies.module';
 import { LlmModule } from './services/llm/llm.module';
 import { BooksModule } from './services/books/books.module';
+import { BooksController } from './controllers/books/books.controller';
 
 @Module({
   imports: [
@@ -22,7 +23,12 @@ import { BooksModule } from './services/books/books.module';
     LlmModule,
     BooksModule,
   ],
-  controllers: [AppController, MemoController, MoviesController],
+  controllers: [
+    AppController,
+    MemoController,
+    MoviesController,
+    BooksController,
+  ],
   providers: [AppService],
 })
 export class AppModule {}
