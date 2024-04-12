@@ -46,7 +46,7 @@ function getVectorStore() {
         title: PrismaVectorStore.ContentColumn,
         subtitle: PrismaVectorStore.ContentColumn,
         authors: PrismaVectorStore.ContentColumn,
-        publisherName: PrismaVectorStore.ContentColumn,
+        publisher: PrismaVectorStore.ContentColumn,
         description: PrismaVectorStore.ContentColumn,
       },
     },
