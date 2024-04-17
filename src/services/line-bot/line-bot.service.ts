@@ -62,6 +62,13 @@ export class LineBotService {
     message: TextEventMessage,
   ): Promise<void> {
     this.logger.debug('LineBotService.searchBooks called', { message });
+    // ローディングのアニメーションを表示する
+    // @see https://developers.line.biz/ja/reference/messaging-api/#display-a-loading-indicator
+    const client = this.createMessagingApiClient();
+    await client.showLoadingAnimation({
+      chatId: event.source.userId,
+      loadingSeconds: 10,
+    });
     // 検索
     const keyword = message.text;
     const books = await this.booksService.search(keyword);

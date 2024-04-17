@@ -90,7 +90,7 @@ export class LineBotWebhookController {
     if (!text) {
       return;
     }
-    // TODO: 返信メッセージを作成する
+    // 返信メッセージを作成して送信する
     await this.lineBotService.searchAndReplyRecommendBooks(event, message);
   }
 }

@@ -713,9 +713,9 @@
     zod-to-json-schema "^3.22.3"
 
 "@line/bot-sdk@^9.1.0":
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/@line/bot-sdk/-/bot-sdk-9.1.0.tgz#c6ff0b708f968d460ed141ca42f9cba7bfe1ff30"
-  integrity sha512-ACKZ3dBvyO7DB16+r4GRQchyG8w4mGxq3Xckg7KrgfnPzuqsbCyoUdjtFqcLw2MtW672N9ow8PR+8hfShhd5/g==
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/@line/bot-sdk/-/bot-sdk-9.2.0.tgz#7c9157806362c3f2278da6e6f908ca9ba2e1f2cc"
+  integrity sha512-Xi124psxMheVziRwHLJ/T8w3V+yoUJ/b57k5UkGW2iKuxtfIizfrnROHj1Me9Yep/ypMAfjGyzQ9gmCHfVCh5w==
   dependencies:
     "@types/node" "^20.0.0"
   optionalDependencies:

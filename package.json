@@ -29,7 +29,7 @@
   "dependencies": {
     "@langchain/community": "^0.0.43",
     "@langchain/openai": "^0.0.25",
-    "@line/bot-sdk": "^9.1.0",
+    "@line/bot-sdk": "^9.2.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^3.2.1",
     "@nestjs/core": "^9.0.0",
